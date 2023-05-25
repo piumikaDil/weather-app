@@ -1,0 +1,270 @@
+  main {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+
+  }
+
+  .headder-sec {
+    display: flex;
+    margin: 25px 0 0 70px;
+  }
+
+  .head-btn {
+    display: flex;
+  }
+
+  h4 {
+    color: white;
+    /* margin-left: 200px; */
+  }
+
+  .location-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .search-input {
+    margin: 0px 100px 0 130px;
+    height: 40px;
+    width: 600px;
+    background-color: #2F3640;
+    opacity: 0.4;
+    border-radius: 50px;
+    border: none;
+    color: white;
+  }
+
+  .div-search {
+    position: relative;
+  }
+
+
+  .btn {
+    height: 40px;
+    color: white;
+    border: none;
+    position: absolute;
+    right: 105px;
+    border-radius: 50%;
+  }
+
+  .btn-1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+  }
+
+
+  .icon-search {
+    font-size: 25px;
+    color: white;
+  }
+
+  img {
+    margin-left: -1px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .light-btn {
+    background-color: #82CCDD;
+  }
+
+  .card-sec {
+    display: flex;
+    background-color: #82CCDD;
+
+  }
+
+  .dark-btn {
+    background-color: hsl(217, 16%, 22%, 50%);
+    margin-right: 20px;
+    /* opacity: 0.4; */
+  }
+
+  .second-sec {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 80px;
+    color: white;
+  }
+
+  .third-sec {
+    display: flex;
+    position: relative;
+    right: 1470px;
+  }
+
+  .three-day {
+    margin: 0 600px 0 300px;
+  }
+
+  .hi {
+    height: 10px;
+  }
+
+
+  .card {
+    position: absolute;
+    left: 310px;
+    top: 145px;
+    background-color: #82CCDD;
+    width: 250px;
+
+
+  }
+
+  .display-4 {
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .card-2 {
+    color: white;
+    margin-left: 100px;
+    width: 200px;
+    background-color: hsl(217, 16%, 22%, 35%);
+
+  }
+
+  .card-3 {
+    margin-left: 330px;
+    width: 200px;
+    background-color: hsl(217, 16%, 22%, 35%);
+  }
+
+  .card-4 {
+    margin-left: 560px;
+    width: 200px;
+    background-color: hsl(217, 16%, 22%, 35%);
+  }
+
+  .map-sec {
+    display: flex;
+    position: absolute;
+    top: 410px;
+    left: 80px;
+    color: white;
+  }
+
+  .map-sec>h5:nth-child(1) {
+    margin-right: 960px;
+  }
+
+  .google-map {
+    position: absolute;
+    left: 80px;
+    top: 450px;
+  }
+
+  iframe {
+    width: 1000px;
+    height: 250px;
+  }
+
+  .real-feel {
+    display: flex;
+    font-size: 15px;
+  }
+
+  .humidity {
+    display: flex;
+    margin-top: -30px;
+  }
+
+  .wind {
+    display: flex;
+    margin-bottom: -15px;
+  }
+
+  .location {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+  }
+
+  .main-img {
+    margin-top: -60px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .current-weather {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: -30px;
+  }
+
+  .humidity-wind {
+    margin-top: 50px;
+    display: flex;
+  }
+
+  .day {
+    margin-bottom: 20px;
+  }
+
+  .day-1 {
+    margin-left: 65px;
+    margin-top: -15px;
+  }
+
+  .capacity {
+    position: absolute;
+    top: 160px;
+    left: 45px;
+  }
+
+  .image {
+    margin-left: 40px;
+    margin-top: 10px;
+    width: 80px;
+    height: 70px;
+  }
+
+  .wind-2 {
+    margin-top: 10px;
+    margin-bottom: -10px;
+  }
+
+  .div-last-days {
+    display: flex;
+    width: 335px;
+    height: 75px;
+    background-color: hsl(217, 16%, 22%, 35%);
+    margin-bottom: 11px;
+    border-radius: 20px;
+  }
+
+  .div-sec {
+    position: absolute;
+    top: 450px;
+    right: 60px;
+  }
+
+  .last-day-1 {
+    margin: 10px 0 0 20px;
+  }
+
+  .last-day-1-img {
+    width: 70px;
+    height: 70px;
+    margin: 0 0 0 60px;
+  }
+
+  .last-day-1-capacity {
+    margin: 10px 0 0 40px;
+    color: white;
+  }
+
+ .noti-div{
+  width: 335px;
+  height: 235px;
+  background-color: hsl(217, 16%, 22%, 35%);
+  position: absolute;
+  top: 150px;
+  right: 65px;
+  border-radius: 20px;
+ }
