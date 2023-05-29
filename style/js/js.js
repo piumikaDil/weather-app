@@ -27,25 +27,40 @@ $(".dark-btn").on("click", () => {
     $(".last-day-1").css("color", "white")
     $(".search-input").css("color", "white")
 
+})
 
 
 
-
-
-
-
-
-
+$(".light-btn").on("click", () => {
+    $("body").css("backgroundColor", "white")
+    $(".search-input").css("backgroundColor", "white")
+    $(".location").css("color", "black")
+    $(".location-img").css("color", "black")
+    $(".second-sec").css("color", "white")
+    $(".card-2").css({
+        "backgroundColor": "hsla(214, 13%, 78%, 0.35)",
+        "color": "black"
+    })
+    $(".card-3").css({
+        "backgroundColor": "hsla(214, 13%, 78%, 0.35)",
+        "color": "black"
+    })
+    $(".card-4").css({
+        "backgroundColor": "hsla(214, 13%, 78%, 0.35)",
+        "color": "black"
+    })
+    $(".capacity").css("color", "black")
+    $(".fa-fw").css("color", "black")
+    $(".div-last-days").css({ "backgroundColor": "hsla(214, 13%, 78%, 0.35)" })
+    $(".noti-div").css("backgroundColor", "hsla(214, 13%, 78%, 0.35)")
+    $(".bell").css("color", "black")
+    $(".map-sec").css("color", "black")
+    $(".last-day-1-capacity").css("color", "black")
+    $(".last-day-1").css("color", "black")
+    $(".search-input").css("color", "black")
 
 
 })
-
-// })
-
-// $(".light-btn").on("click", () => {
-//     $("body").css("backgroundColor", "white")
-
-// })
 
 
 /////////////////////////////////////////fetching data//////////////////////////////////////////////////////////////////
