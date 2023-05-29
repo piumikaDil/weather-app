@@ -26,6 +26,8 @@ $(".dark-btn").on("click", () => {
     $(".last-day-1-capacity").css("color", "white")
     $(".last-day-1").css("color", "white")
     $(".search-input").css("color", "white")
+    $(".icon-search").css("color", "white")
+
 
 })
 
@@ -36,7 +38,7 @@ $(".light-btn").on("click", () => {
     $(".search-input").css("backgroundColor", "white")
     $(".location").css("color", "black")
     $(".location-img").css("color", "black")
-    $(".second-sec").css("color", "white")
+    $(".second-sec").css("color", "black")
     $(".card-2").css({
         "backgroundColor": "hsla(214, 13%, 78%, 0.35)",
         "color": "black"
@@ -58,6 +60,8 @@ $(".light-btn").on("click", () => {
     $(".last-day-1-capacity").css("color", "black")
     $(".last-day-1").css("color", "black")
     $(".search-input").css("color", "black")
+    $(".icon-search").css("color", "black")
+
 
 
 })
