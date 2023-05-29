@@ -1,8 +1,13 @@
   main {
-    background-color: black;
+    /* background-color: white; */
     height: 100vh;
     display: flex;
 
+  }
+
+  .display-4 {
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Oswald', sans-serif;
   }
 
   .headder-sec {
@@ -15,24 +20,31 @@
   }
 
   h4 {
-    color: white;
+    color: rgb(0, 0, 0);
     /* margin-left: 200px; */
   }
 
   .location-img {
+    margin-top: 7px;
+    font-size: 20px;
     width: 30px;
     height: 30px;
   }
 
   .search-input {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
     margin: 0px 100px 0 130px;
     height: 40px;
     width: 600px;
-    background-color: #2F3640;
-    opacity: 0.4;
+    /* background-color: #2F3640; */
+    opacity: 1;
     border-radius: 50px;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    padding-left: 20px;
   }
 
   .div-search {
@@ -59,7 +71,7 @@
 
   .icon-search {
     font-size: 25px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   img {
@@ -85,11 +97,13 @@
   }
 
   .second-sec {
+    font-family: 'Chau Philomene One', sans-serif;
     display: flex;
+    font-weight: bold;
     position: absolute;
     top: 110px;
     left: 80px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
   .third-sec {
@@ -101,6 +115,8 @@
   .three-day {
     margin: 0 600px 0 300px;
   }
+
+
 
   .hi {
     height: 10px;
@@ -117,37 +133,52 @@
 
   }
 
+
   .display-4 {
     margin-top: -50px;
     margin-bottom: -50px;
   }
 
   .card-2 {
-    color: white;
+    color: rgb(0, 0, 0);
+    border: none;
     margin-left: 100px;
     width: 200px;
-    background-color: hsl(217, 16%, 22%, 35%);
+    background-color: hsla(214, 13%, 78%, 0.35);
 
   }
 
   .card-3 {
+    color: black;
+    border: none;
     margin-left: 330px;
     width: 200px;
-    background-color: hsl(217, 16%, 22%, 35%);
+    background-color: hsla(214, 13%, 78%, 0.35);
   }
 
   .card-4 {
+    border: none;
     margin-left: 560px;
     width: 200px;
-    background-color: hsl(217, 16%, 22%, 35%);
+    background-color: hsla(214, 13%, 78%, 0.35);
   }
 
   .map-sec {
+    font-family: 'Chau Philomene One', sans-serif;
+    font-weight: 900;
+    display: flex;
     display: flex;
     position: absolute;
     top: 410px;
     left: 80px;
-    color: white;
+    color: rgb(0, 0, 0);
+  }
+
+  .time{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-weight: bold;
+      font-size: 20px;
+
   }
 
   .map-sec>h5:nth-child(1) {
@@ -203,22 +234,33 @@
   }
 
   .day {
+    font-family: 'Sigmar One', cursive;
+    font-weight: 900;
+    font-size: 20px;
     margin-bottom: 20px;
   }
 
   .day-1 {
-    margin-left: 65px;
+    font-family: 'Sigmar One', cursive;
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 45px;
     margin-top: -15px;
   }
 
   .capacity {
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Oswald', sans-serif;
+    font-style: initial;
+    color: #000000;
     position: absolute;
-    top: 160px;
+    font-size: 48px;
+    top: 190px;
     left: 45px;
   }
 
   .image {
-    margin-left: 40px;
+    margin-left: 33px;
     margin-top: 10px;
     width: 80px;
     height: 70px;
@@ -233,7 +275,7 @@
     display: flex;
     width: 335px;
     height: 75px;
-    background-color: hsl(217, 16%, 22%, 35%);
+    background-color: hsla(214, 13%, 78%, 0.35);
     margin-bottom: 11px;
     border-radius: 20px;
   }
@@ -245,6 +287,8 @@
   }
 
   .last-day-1 {
+    font-family: 'Sigmar One', cursive;
+    font-weight: 900;
     margin: 10px 0 0 20px;
   }
 
@@ -256,15 +300,25 @@
 
   .last-day-1-capacity {
     margin: 10px 0 0 40px;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
- .noti-div{
-  width: 335px;
-  height: 235px;
-  background-color: hsl(217, 16%, 22%, 35%);
-  position: absolute;
-  top: 150px;
-  right: 65px;
-  border-radius: 20px;
- }
+  .noti-div {
+    width: 335px;
+    height: 235px;
+    background-color: hsla(214, 13%, 78%, 0.35);
+    position: absolute;
+    top: 150px;
+    right: 65px;
+    border-radius: 20px;
+  }
+
+  .bell {
+    color: rgb(0, 0, 0);
+    margin: 20px;
+    font-size: 20px;
+  }
+
+  .fa-fw {
+    color: black;
+  }
