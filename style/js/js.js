@@ -80,14 +80,6 @@ $(".btn").on("click", () => {
     getCurrentDateAndTime()
     getCurrentWeathher()
 
-    // getCountry()
-    // console.log(location1);
-    // getCurrentWeathher()
-
-
-    // const dateStr = '2022-04-29';
-    // $(".location").text((getDayName(new Date(dateStr))));
-
 })
 
 function getDayName(date = new Date(), locale = 'en-US') {
@@ -111,14 +103,6 @@ const getLocation = () => {
 
 
         })
-
-
-    //     .then(() => {
-    //         console.log(day2);
-    //     })
-
-
-
 }
 
 const getCurrentWeathher = () => {
@@ -128,12 +112,7 @@ const getCurrentWeathher = () => {
             $(".current-temp").text(parseInt(data.current.temp_c))
             $(".current-feel").text(data.current.feelslike_c +"°")
             $(".current-humidity").text(data.current.humidity+"%")
-            $(".current-wind").text(data.current.wind_kph+" kp/h")
-
-
-           
-
-        
+            $(".current-wind").text(data.current.wind_kph+" kp/h") 
         })
     //   .then(data => console.log(data.current))
 }
