@@ -1,32 +1,35 @@
 //////////////////////////////////// dark and light mode/////////////////////////////////////////////////////////////
 $(".dark-btn").on("click", () => {
-    $("body").css("backgroundColor", "black")
-    $(".search-input").css("backgroundColor", "hsl(217, 16%, 22%, 35%)")
-    $(".location").css("color", "white")
-    $(".location-img").css("color", "white")
-    $(".second-sec").css("color", "white")
+    $("body").css({ "backgroundColor": "black", "transition": "1s" })
+    $(".search-input").css({ "backgroundColor": "hsl(217, 16%, 22%, 35%)", "transition": "1s" })
+    $(".location").css({ "color": "white", "transition": "1s" })
+    $(".location-img").css({ "color": "white", "transition": "1s" })
+    $(".second-sec").css({ "color": "white", "transition": "1s" })
     $(".card-2").css({
         "backgroundColor": "hsl(217, 16%, 22%, 35%",
-        "color": "white"
+        "color": "white",
+        "transition": "1s"
     })
     $(".card-3").css({
         "backgroundColor": "hsl(217, 16%, 22%, 35%",
-        "color": "white"
+        "color": "white",
+        "transition": "1s"
     })
     $(".card-4").css({
         "backgroundColor": "hsl(217, 16%, 22%, 35%",
-        "color": "white"
+        "color": "white",
+        "transition": "1s"
     })
-    $(".capacity").css("color", "white")
-    $(".fa-fw").css("color", "white")
-    $(".div-last-days").css({ "backgroundColor": "hsl(217, 16%, 22%, 35%)"})
-    $(".noti-div").css("backgroundColor", "hsl(217, 16%, 22%, 35%)")
-    $(".bell").css("color", "white")
-    $(".map-sec").css("color", "white")
-    $(".last-day-1-capacity").css("color", "white")
-    $(".last-day-1").css("color", "white")
-    $(".search-input").css("color", "white")
-    $(".icon-search").css("color", "white")
+    $(".capacity").css({ "color": "white", "transition": "1s" })
+    $(".fa-fw").css({ "color": "white", "transition": "1s" })
+    $(".div-last-days").css({ "backgroundColor": "hsl(217, 16%, 22%, 35%)", "transition": "1s" })
+    $(".noti-div").css({ "backgroundColor": "hsl(217, 16%, 22%, 35%)", "transition": "1s" })
+    $(".bell").css({ "color": "white", "transition": "1s" })
+    $(".map-sec").css({ "color": "white", "transition": "1s" })
+    $(".last-day-1-capacity").css({ "color": "white", "transition": "1s" })
+    $(".last-day-1").css({ "color": "white", "transition": "1s" })
+    $(".search-input").css({ "color": "white", "transition": "1s" })
+    $(".icon-search").css({ "color": "white", "transition": "1s" })
 
 
 })
@@ -74,19 +77,63 @@ let location1 = $("search-input").val()
 
 $(".btn").on("click", () => {
     getLocation()
-    console.log(location1);
+    getCurrentDateAndTime()
+    getCurrentWeathher()
+
+    // getCountry()
+    // console.log(location1);
     // getCurrentWeathher()
+
+
+    // const dateStr = '2022-04-29';
+    // $(".location").text((getDayName(new Date(dateStr))));
+
 })
 
+function getDayName(date = new Date(), locale = 'en-US') {
+    return date.toLocaleDateString(locale, { weekday: 'long' });
+}
+
+let getCurrentDateAndTime = () => {
+    let today = new Date().toISOString().slice(0, 10)
+    $(".day").text(((getDayName(new Date(today)))))
+
+    $(".time").text((new Date().toLocaleTimeString([], { hour: '2-digit', minute: "2-digit", hour12: false })));
+
+}
+
 const getLocation = () => {
-    fetch(`http://api.weatherapi.com/v1/timezone.json?key=e21a55aa67274426b0183102231405&q=${location1}`)
+    fetch("http://api.weatherapi.com/v1/timezone.json?key=e21a55aa67274426b0183102231405&q=dambulla")
         .then(Response => Response.json())
-        .then(data => $(".location").text(data.location.name))
+        .then(data => {
+            $(".location").text(data.location.name)
+            $(".country").text("," + data.location.country)
+
+
+        })
+
+
+    //     .then(() => {
+    //         console.log(day2);
+    //     })
+
+
+
 }
 
 const getCurrentWeathher = () => {
     fetch("http://api.weatherapi.com/v1/current.json?key=e21a55aa67274426b0183102231405&q=dambulla")
         .then(Response => Response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            $(".current-temp").text(parseInt(data.current.temp_c))
+            $(".current-feel").text(data.current.feelslike_c +"°")
+            $(".current-humidity").text(data.current.humidity+"%")
+            $(".current-wind").text(data.current.wind_kph+" kp/h")
+
+
+           
+
+        
+        })
     //   .then(data => console.log(data.current))
 }

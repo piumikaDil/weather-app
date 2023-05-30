@@ -5,6 +5,8 @@
 
   }
 
+
+
   .display-4 {
     font-family: 'Alfa Slab One', cursive;
     font-family: 'Oswald', sans-serif;
@@ -84,11 +86,7 @@
     background-color: #82CCDD;
   }
 
-  .card-sec {
-    display: flex;
-    background-color: #82CCDD;
-
-  }
+ 
 
   .dark-btn {
     background-color: hsl(217, 16%, 22%, 50%);
@@ -216,6 +214,7 @@
     font-weight: bold;
   }
 
+ 
   .main-img {
     margin-top: -60px;
     width: 100px;
