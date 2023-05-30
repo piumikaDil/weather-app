@@ -100,8 +100,6 @@ const getLocation = () => {
         .then(data => {
             $(".location").text(data.location.name)
             $(".country").text("," + data.location.country)
-
-
         })
 }
 
