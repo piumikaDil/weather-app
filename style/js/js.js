@@ -71,16 +71,95 @@ $(".light-btn").on("click", () => {
 
 
 /////////////////////////////////////////fetching data//////////////////////////////////////////////////////////////////
+const today = new Date()
+const sevenDaysAgo = new Date();
+sevenDaysAgo.setDate(today.getDate() - 3);
 const baseURL = 'http://api.weatherapi.com/v1/'
-let location1 = $("search-input").val()
+let longitude = ""
+let latitude = ""
+let endDate = today.toISOString().split("T")[0];
+let startDate = sevenDaysAgo.toISOString().split("T")[0];
+
+$(document).ready(function () {
+    getPosition()
+});
+
+
 
 
 $(".btn").on("click", () => {
-    getLocation()
+    console.log(endDate + " " + startDate);
+    let location1 = document.getElementById("search-input")
+    getSearchLocation(location1)
+    getHistoryWeathher(location1)
     getCurrentDateAndTime()
-    getCurrentWeathher()
+    getCurrentWeathher(location1)
+    getForecastWeathher(location1)
 
 })
+
+function getPosition() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");;
+    }
+}
+
+function showPosition(position) {
+    longitude = position.coords.longitude
+    latitude = position.coords.latitude
+
+
+    fetch(`${baseURL}timezone.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}`)
+        .then(Response => Response.json())
+        .then(data => {
+            $(".city").text(data.location.name);
+            $(".country").text("," + data.location.country)
+        })
+
+    fetch(`${baseURL}current.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}`)
+        .then(Response => Response.json())
+        .then(data => {
+            $(".current-temp").text(parseInt(data.current.temp_c))
+            $(".current-feel").text(data.current.feelslike_c + "°")
+            $(".current-humidity").text(data.current.humidity + "%")
+            $(".current-wind").text(data.current.wind_kph + " kp/h")
+        })
+
+    fetch(`${baseURL}history.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}&end_dt=${endDate}&dt=${startDate}`)
+        .then(Response => Response.json())
+        .then(data => {
+            $(".one").text(data.forecast.forecastday[0].day.avgtemp_c + "°C")
+            $(".two").text(data.forecast.forecastday[1].day.avgtemp_c + "°C")
+            $(".three").text(data.forecast.forecastday[2].day.avgtemp_c + "°C")
+            $(".day-one").text(data.forecast.forecastday[0].date)
+            $(".day-two").text(data.forecast.forecastday[1].date)
+            $(".day-three").text(data.forecast.forecastday[2].date)
+
+        })
+
+    fetch(`${baseURL}forecast.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}&days=4`)
+        .then(Response => Response.json())
+        .then(data => {
+            console.log(data.forecast.forecastday[1].day.maxwind_kph)
+            $(".future-wind-1").text(data.forecast.forecastday[0].day.maxwind_kph + " km/h")
+            $(".future-wind-2").text(data.forecast.forecastday[1].day.maxwind_kph + " km/h")
+            $(".future-wind-3").text(data.forecast.forecastday[2].day.maxwind_kph + " km/h")
+            $(".future-humidity-1").text(data.forecast.forecastday[0].day.avghumidity + "%")
+            $(".future-humidity-2").text(data.forecast.forecastday[1].day.avghumidity + "%")
+            $(".future-humidity-3").text(data.forecast.forecastday[2].day.avghumidity + "%")
+            $(".future-capacity-1").text(data.forecast.forecastday[0].day.avgtemp_c + "°C")
+            $(".future-capacity-2").text(data.forecast.forecastday[1].day.avgtemp_c + "°C")
+            $(".future-capacity-3").text(data.forecast.forecastday[2].day.avgtemp_c + "°C")
+            $(".future-day-one").text(data.forecast.forecastday[0].date)
+            $(".future-day-two").text(data.forecast.forecastday[1].date)
+            $(".future-day-three").text(data.forecast.forecastday[2].date)
+
+        })
+}
+// console.log(longitude+" " +latitude);
+
 
 function getDayName(date = new Date(), locale = 'en-US') {
     return date.toLocaleDateString(locale, { weekday: 'long' });
@@ -94,23 +173,64 @@ let getCurrentDateAndTime = () => {
 
 }
 
-const getLocation = () => {
-    fetch("http://api.weatherapi.com/v1/timezone.json?key=e21a55aa67274426b0183102231405&q=dambulla")
+const getSearchLocation = (location1) => {
+    fetch(`${baseURL}timezone.json?key=e21a55aa67274426b0183102231405&q=${location1.value}`)
         .then(Response => Response.json())
         .then(data => {
-            $(".location").text(data.location.name)
+            $(".city").text(data.location.name);;
             $(".country").text("," + data.location.country)
         })
 }
 
-const getCurrentWeathher = () => {
-    fetch("http://api.weatherapi.com/v1/current.json?key=e21a55aa67274426b0183102231405&q=dambulla")
+
+const getCurrentWeathher = (location1) => {
+    fetch(`${baseURL}current.json?key=e21a55aa67274426b0183102231405&q=${location1.value}`)
         .then(Response => Response.json())
         .then(data => {
             $(".current-temp").text(parseInt(data.current.temp_c))
-            $(".current-feel").text(data.current.feelslike_c +"°")
-            $(".current-humidity").text(data.current.humidity+"%")
-            $(".current-wind").text(data.current.wind_kph+" kp/h") 
+            $(".current-feel").text(data.current.feelslike_c + "°")
+            $(".current-humidity").text(data.current.humidity + "%")
+            $(".current-wind").text(data.current.wind_kph + " km/h")
         })
-    //   .then(data => console.log(data.current))
 }
+
+const getHistoryWeathher = (location1) => {
+    fetch(`${baseURL}history.json?key=e21a55aa67274426b0183102231405&q=${location1.value}&end_dt=${endDate}&dt=${startDate}`)
+        .then(Response => Response.json())
+        .then(data => {
+            $(".one").text(data.forecast.forecastday[0].day.avgtemp_c + "°C")
+            $(".two").text(data.forecast.forecastday[1].day.avgtemp_c + "°C")
+            $(".three").text(data.forecast.forecastday[2].day.avgtemp_c + "°C")
+            $(".day-one").text(data.forecast.forecastday[0].date)
+            $(".day-two").text(data.forecast.forecastday[1].date)
+            $(".day-three").text(data.forecast.forecastday[2].date)
+
+
+          
+        })
+}
+
+const getForecastWeathher = (location1) => {
+    fetch(`${baseURL}forecast.json?key=e21a55aa67274426b0183102231405&q=${location1.value}&days=4`)
+        .then(Response => Response.json())
+        .then(data => {
+            console.log(data.forecast.forecastday[1].day.maxwind_kph)
+            $(".future-wind-1").text(data.forecast.forecastday[0].day.maxwind_kph + " km/h")
+            $(".future-wind-2").text(data.forecast.forecastday[1].day.maxwind_kph + " km/h")
+            $(".future-wind-3").text(data.forecast.forecastday[2].day.maxwind_kph + " km/h")
+            $(".future-humidity-1").text(data.forecast.forecastday[0].day.avghumidity + "%")
+            $(".future-humidity-2").text(data.forecast.forecastday[1].day.avghumidity + "%")
+            $(".future-humidity-3").text(data.forecast.forecastday[2].day.avghumidity + "%")
+            $(".future-capacity-1").text(data.forecast.forecastday[0].day.avgtemp_c + "°C")
+            $(".future-capacity-2").text(data.forecast.forecastday[1].day.avgtemp_c +"°C")
+            $(".future-capacity-3").text(data.forecast.forecastday[2].day.avgtemp_c + "°C")
+            $(".future-day-one").text(data.forecast.forecastday[0].date)
+            $(".future-day-two").text(data.forecast.forecastday[1].date)
+            $(".future-day-three").text(data.forecast.forecastday[2].date)
+
+        }) 
+
+    // console.log(data.forecast.forecastday[1].date))
+}
+
+
