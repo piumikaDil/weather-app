@@ -42,8 +42,13 @@
     display: flex;
     position: absolute;
     top: 23px;
-    right: 300px;
+    right: 100px;
   }
+
+    .piumika{
+      margin-left: 80px;
+      margin-top: 10px;
+    }
 
   h4 {
     color: rgb(0, 0, 0);
@@ -333,13 +338,43 @@
   }
 
   .noti-div {
-    width: 335px;
-    height: 235px;
-    background-color: hsla(214, 13%, 78%, 0.35);
+    /* width: 335px;
+    height: 235px; */
+    /* background-color: hsla(214, 13%, 78%, 0.35); */
     position: absolute;
     top: 150px;
     right: 65px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+  }
+
+  .noti-div-1 {
+    width: 335px;
+    height: 110px;
+    background-color: #f6be3295;
+    border-radius: 10px;
+
+  }
+
+     .para{
+      font-size: 20px;
+      margin-left: 80px;
+      margin-top: -10px;
+     }
+
+.sunrice-img{
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+
+
+  .noti-div-2 {
+    width: 335px;
+    height: 110px;
+    background-color: hsla(214, 13%, 78%, 0.35);
+    margin-top: 10px;
+    border-radius: 10px;
+
   }
 
   .bell {
@@ -358,6 +393,10 @@
       left: -80px;
     }
 
+    .piumika{
+      visibility: hidden;
+    }
+
     .search-input {
       font-size: 10px;
       border-radius: 15px;
@@ -368,7 +407,7 @@
 
     .head-btn {
       top: 35px;
-      right: 30px;
+      right: -220px;
     }
 
     .city {
@@ -416,7 +455,7 @@
 
     .noti-div {
       left: 22px;
-      top: 2170px;
+      top: 2100px;
     }
 
     .second-sec {
@@ -474,21 +513,21 @@
       top: 700px;
     }
 
-    .map-tag{
+    .map-tag {
       margin: 40px 0 0 0;
       width: 200px;
     }
 
-    .last-day-tag{
+    .last-day-tag {
       position: absolute;
       top: 1350px;
       left: -50px;
     }
 
-        .last-day-1 {
-          font-size: 13px;
-          
-        }
+    .last-day-1 {
+      font-size: 13px;
+
+    }
 
 
   }

@@ -18,14 +18,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>Document</title>
+    <title>Weather</title>
 </head>
 
 <body>
     <main>
         <section class="headder-sec">
-            <!-- <img src="style/icons/icons8-location-24.png" alt="location" class="location-img"> -->
-            <i class="fa-solid fa-bell location-img"></i>
+                <i class="fa-solid fa-location-dot location-img"></i>
+
             <h4 class="location city"></h4>
             <h4 class="location country"></h4>
             <div class="div-search">
@@ -37,13 +37,13 @@
                 <button class="btn-1 dark-btn"><img class="btn-image" src="style/icons/moon.png" alt=""></button>
                 <button class="btn-1 light-btn"><img class="btn-image" src="style/icons/flower.png"
                         alt="light icon"></i></button>
+                        <h6 class="piumika">software by @Piumika</h6>
             </div>
         </section>
 
         <section class="second-sec">
             <h5>Today</h5>
             <h5 class="three-day">Next 3 Days</h5>
-            <h5 class="not">Notificatios</h5>
         </section>
 
         <!-- <section class="card-sec"> -->
@@ -112,7 +112,7 @@
                         <div class="d-flex">
                             <h6 class="flex-grow-1 day-1 future-day-one">Tue</h6>
                         </div>
-                        <img class="image" src="style/images/rain with sun.png" alt="">
+                        <img class="image future-img-1" src="style/images/rain with sun.png" alt="">
 
                         <div class="d-flex flex-column text-center mt-5 mb-4">
                             <h6 class="display-4 mb-0 font-weight-bold capacity future-capacity-1"> 13°C
@@ -156,7 +156,7 @@
                         <div class="d-flex">
                             <h6 class="flex-grow-1 day-1 future-day-two">Wen</h6>
                         </div>
-                        <img class="image" src="style/images/rain with sun.png" alt="">
+                        <img class="image future-img-2" src="style/images/rain with sun.png" alt="">
 
                         <div class="d-flex flex-column text-center mt-5 mb-4">
                             <h6 class="display-4 mb-0 font-weight-bold capacity future-capacity-2"> 13°C
@@ -200,7 +200,7 @@
                         <div class="d-flex">
                             <h6 class="flex-grow-1 day-1 future-day-three">Thu</h6>
                         </div>
-                        <img class="image" src="style/images/rain with sun.png" alt="">
+                        <img class="image future-img-3" src="style/images/rain with sun.png" alt="">
                         <div class="d-flex flex-column text-center mt-5 mb-4">
                             <h6 class="display-4 mb-0 font-weight-bold capacity future-capacity-3"> 13°C
                             </h6>
@@ -244,25 +244,33 @@
         </section>
 
         <section>
-            <div class="noti-div">
-                <i class="fa-solid fa-bell bell"></i>
-            </div>
+            <section class="noti-div">
+                <div class="noti-div-1">
+                    <img class="sunrice-img sunrise-image"  src="style/images/icons8-sunrise-50.png" alt="sunrise icon">
+                    <p class="para">sunrise <span class="sunrise-time">00.00</span></p>
+                </div>
+                <div class="noti-div-2">
+                    <img class="sunrice-img sunset-image" src="style/icons/sunset-black.png" alt="sunrise icon">
+                    <p class="para">sunset <span class="sunset-time">00.00</span></p>
+                </div>
+
+            </section>
         </section>
 
         <section class="div-sec">
             <div class="div-last-days last-day">
                 <h4 class="last-day-1 day-one"><u>Sun</u> </h4>
-                <img class="last-day-1-img" src="style/images/rain with sun.png" alt="">
+                <img class="last-day-1-img history-img-1" src="style/images/rain with sun.png" alt="">
                 <h1 class="last-day-1-capacity one">13°C</h2>
             </div>
             <div class="div-last-days">
                 <h4 class="last-day-1 day-two"><u>Sun</u> </h4>
-                <img class="last-day-1-img" src="style/images/rain with sun.png" alt="">
+                <img class="last-day-1-img history-img-2" src="style/images/rain with sun.png" alt="">
                 <h1 class="last-day-1-capacity two">13°C</h2>
             </div>
             <div class="div-last-days">
                 <h4 class="last-day-1 day-three"><u>Sun</u> </h4>
-                <img class="last-day-1-img" src="style/images/rain with sun.png" alt="">
+                <img class="last-day-1-img history-img-3" src="style/images/rain with sun.png" alt="">
                 <h1 class="last-day-1-capacity three">13°C</h2>
             </div>
         </section>
