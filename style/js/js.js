@@ -88,7 +88,7 @@ $(".light-btn").on("click", () => {
 const today = new Date()
 const DayAgo = new Date();
 DayAgo.setDate(today.getDate() - 3);
-const baseURL = 'http://api.weatherapi.com/v1/'
+const baseURL = 'https://api.weatherapi.com/v1/'
 let longitude = ""
 let latitude = ""
 let endDate = today.toISOString().split("T")[0];
