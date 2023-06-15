@@ -127,7 +127,7 @@ function showPosition(position) {
     latitude = position.coords.latitude
 
 
-    fetch(`${baseURL}timezone.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}`)
+    fetch(`https://api.weatherapi.com/v1/timezone.json?key=e21a55aa67274426b0183102231405&q=${latitude},${longitude}`)
         .then(Response => Response.json())
         .then(data => {
             $(".city").text(data.location.name);
