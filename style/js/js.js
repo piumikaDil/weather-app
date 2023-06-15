@@ -97,6 +97,7 @@ let startDate = DayAgo.toISOString().split("T")[0];
 $(document).ready(function () {
     getPosition()
     getCurrentDateAndTime()
+    console.log(endDate+" "+startDate);
 
 });
 
